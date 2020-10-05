@@ -1,0 +1,21 @@
+def search(a, k):
+	low = 0
+	high = len(a)-1
+	
+	while(low <= high):
+		mid = (low + high)//2
+		if a[mid] == k:
+			return f'Index found at index {mid}'
+		elif a[mid]<k:
+			low = mid+1
+		elif a[mid]>k:
+			high = mid-1
+	return False
+			
+
+if __name__ == '__main__':
+	a = [10, 15, 18, 23, 39, 57,49]
+	print(search(a, 39))
+
+#Time complexity O(logn)
+#Space complexity O(1)
